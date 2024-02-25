@@ -18,8 +18,27 @@
 	function save() {
 		toggleVisibility();
 	}
+
+	function onKeyDown(event: KeyboardEvent) {
+		console.log('penis');
+		switch (event.key) {
+			case 'Escape':
+				toggleVisibility();
+				break;
+			case 'ArrowUp':
+				increase();
+				break;
+			case 'ArrowDown':
+				decrease();
+				break;
+			case 'Enter':
+				save();
+				break;
+		}
+	}
 </script>
 
+<svelte:window on:keydown|preventDefault={onKeyDown} />
 <button on:click={toggleVisibility}>Edit</button>
 {#if visibility}
 	<div class="absolute top-0 left-0 w-screen h-screen">

@@ -4,7 +4,7 @@
 	import PlusIcon from './icons/plus-icon.svelte';
 	import MinusIcon from './icons/minus-icon.svelte';
 	import BookIcon from './book-icon.svelte';
-	import { redirect } from '@sveltejs/kit';
+	import { goto } from '$app/navigation';
 
 	export let book: Book;
 
@@ -52,7 +52,7 @@
 			},
 			body: JSON.stringify({ id: book.id })
 		});
-		redirect(307, '/');
+		goto('/');
 	}
 </script>
 

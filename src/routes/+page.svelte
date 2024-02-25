@@ -22,6 +22,7 @@
 	const bookStore = writable(sampleBook);
 
 	let books: Book[] = data.books;
+	$: books = books;
 
 	let latestBook: Book = [...books].sort(
 		(a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()

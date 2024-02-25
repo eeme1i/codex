@@ -14,6 +14,11 @@
 	let error: string = '';
 
 	function validateBook() {
+		if (bookPageCount != Number(bookPageCount) || bookCurrentPage != Number(bookCurrentPage)) {
+			error = 'Page count must be a number';
+			return false;
+		}
+
 		if (bookTitle === '') {
 			error = 'Title is required';
 			return false;
